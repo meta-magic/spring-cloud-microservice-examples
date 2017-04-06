@@ -1,0 +1,22 @@
+server:
+  port: 9093  
+
+spring:
+  application:
+    name: authservice  
+  
+db:
+  name: authdb
+  userid: root
+  password: root
+  url: http://localhost:2311
+  
+eureka:
+  instance:
+    ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    metadata-map:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+  client:
+      serviceUrl:
+        defaultZone: http://localhost:8760/eureka/

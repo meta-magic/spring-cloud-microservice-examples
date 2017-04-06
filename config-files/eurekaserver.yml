@@ -1,0 +1,19 @@
+# ----------------------------------------------------------------------
+# Configure this Discovery Server
+# ----------------------------------------------------------------------
+server:
+  port: 8760   
+
+spring:
+  application:
+    name: eurekaserver  
+  
+eureka:
+  instance:
+    hostname: localhost
+  # ----------------------------------------------------------------------
+  # A standalone server can not register with itself !
+  # ----------------------------------------------------------------------
+  client:  
+    registerWithEureka: false
+    fetchRegistry: false

@@ -1,0 +1,17 @@
+server:
+  port: 7072
+
+spring:
+  application:
+    name: authclientservice  
+  
+  
+eureka:
+  instance:
+    ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    metadata-map:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+  client:
+      serviceUrl:
+        defaultZone: http://localhost:8760/eureka/
